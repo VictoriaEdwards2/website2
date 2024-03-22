@@ -106,6 +106,7 @@ console.log(bricks)
 //Draw everyhting
 function draw()
 {
+    ctx.clearRect(0,0,canvas.width,canvas.height)
     drawPaddle()
     drawBall()
     drawScore()
@@ -115,8 +116,38 @@ function draw()
 
 function movePaddle()
 {
-    paddle.x = paddle.x +paddle.dx
+    paddle.x = paddle.x + paddle.dx
+    //wall detection
+    if (paddle.x < 0){
+        paddle.x = 0
+    }
+    if (paddle.x + paddle.w > canvas.width)
+    {
+        paddle.x = canvas.width - paddle.w
+    }
 }
+document.addEventListener('keydown', keyDown)
+document.addEventListener('keyup', keyUp)
+
+function keyDown(e)
+{
+    if (e.key == 'ArrowRight' || e.key == 'Right' )
+    {
+    paddle.dx = paddle.speed
+    }
+    if (e.key == 'ArrowLeft' || e.key == 'Left')
+    {
+        paddle.dx = -paddle.speed
+    }
+}
+function keyUp(e)
+{
+    if (e.key == 'ArrowRight' || e.key == 'Right' || e.key =='ArrowLeft' || e.key == 'Left')
+    {
+        paddle.dx = 0
+    }
+}
+
 function update()
 {
     movePaddle()
@@ -124,12 +155,7 @@ function update()
     requestAnimationFrame(update)
 }
 
-document.addEventListener('keydown', keyDown)
-function keyDown(e)
-{
-    if (e.key == 'ArrowRight' || e.key == 'Right')
-    paddle.dx = paddle.speed
-}
+update()
 draw()
 rulesBtn.addEventListener('click', () =>{
     rules.classList.add('show')
