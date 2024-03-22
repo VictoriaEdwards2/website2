@@ -151,6 +151,7 @@ function keyUp(e)
 function moveBall()
 {
     ball.x = ball.x + ball.dx
+    ball.y = ball.y + ball.dy
 }
 function update()
 {
