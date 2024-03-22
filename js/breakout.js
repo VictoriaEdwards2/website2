@@ -111,9 +111,24 @@ function draw()
     drawScore()
     drawBricks()
 }
+
+
 function movePaddle()
 {
-    paddle.x = paddle.x +paddle.
+    paddle.x = paddle.x +paddle.dx
+}
+function update()
+{
+    movePaddle()
+    draw()
+    requestAnimationFrame(update)
+}
+
+document.addEventListener('keydown', keyDown)
+function keyDown(e)
+{
+    if (e.key == 'ArrowRight' || e.key == 'Right')
+    paddle.dx = paddle.speed
 }
 draw()
 rulesBtn.addEventListener('click', () =>{
