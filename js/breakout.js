@@ -148,14 +148,20 @@ function keyUp(e)
     }
 }
 
+function moveBall()
+{
+    ball.x = ball.x + ball.dx
+}
 function update()
 {
+    moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
 }
 
 update()
+
 draw()
 rulesBtn.addEventListener('click', () =>{
     rules.classList.add('show')
