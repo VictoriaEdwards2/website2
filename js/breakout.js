@@ -171,7 +171,11 @@ function moveBall()
         ball.dy = -1 * ball.dy
         showAllBricks()
         score = 0
+        ball.x = canvas.width / 2
+        ball.speed = 0
+
     }
+
     // wall detection left
      // wall detection (right)
     if (ball.x + ball.size < 0)
@@ -204,8 +208,7 @@ function moveBall()
                 }
             })
         })
-        //lose if hit bottom wall
-        if (ball.y + ball.size > canvas)
+
 }
 
 function increaseScore()
@@ -218,6 +221,13 @@ function increaseScore()
     }
 }
 
+document.addEventListener('keydown', (e) => {
+    if (e.code === "Space") {
+        // Do your thing
+        ball.speed = 4
+        showAllBricks()
+    }
+});
 function showAllBricks()
 {
     bricks.forEach(column =>
