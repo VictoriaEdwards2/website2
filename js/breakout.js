@@ -126,8 +126,23 @@ function movePaddle()
         paddle.x = canvas.width - paddle.w
     }
 }
+
+document.addEventListener('space', Space)
+
+function Space(e)
+{
+    if (e.code == "Space" || e.key == " ")
+        {
+            ball.speed = 4
+            ball.dx = 4
+            ball.dy = -4
+            showAllBricks()
+            score = 0
+        }
+}
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
+
 
 function keyDown(e)
 {
@@ -150,8 +165,10 @@ function keyUp(e)
 
 function moveBall()
 {
+
     ball.x = ball.x + ball.dx
     ball.y = ball.y + ball.dy
+
 
     // wall detection (top)
     if (ball.y + ball.size < 0)
@@ -169,12 +186,10 @@ function moveBall()
     if (ball.y + ball.size > canvas.height)
     {
         ball.dy = -1 * ball.dy
-        showAllBricks()
-        score = 0
-        ball.x = canvas.width / 2
-        ball.speed = 0
+
 
     }
+
 
     // wall detection left
      // wall detection (right)
@@ -221,13 +236,7 @@ function increaseScore()
     }
 }
 
-document.addEventListener('keydown', (e) => {
-    if (e.code === "Space") {
-        // Do your thing
-        ball.speed = 4
-        showAllBricks()
-    }
-});
+
 function showAllBricks()
 {
     bricks.forEach(column =>
@@ -238,12 +247,15 @@ function showAllBricks()
                 })
         })
 }
+
+
 function update()
 {
     moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
+
 }
 
 update()
@@ -257,3 +269,4 @@ rulesBtn.addEventListener('click', () =>{
 closeBtn.addEventListener('click', () =>{
     rules.classList.remove('show')
 })
+
