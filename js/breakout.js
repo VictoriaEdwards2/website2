@@ -126,24 +126,22 @@ function movePaddle()
         paddle.x = canvas.width - paddle.w
     }
 }
-
-document.addEventListener('space', Space)
-
-function Space(e)
-{
-    if (e.code == "Space" || e.key == " ")
-        {
-            ball.speed = 4
-            ball.dx = 4
-            ball.dy = -4
-            showAllBricks()
-            score = 0
-        }
-}
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
-
-
+document.addEventListener('keydown', reset)
+function reset(e)
+{
+    if (e.key == " ")
+    {
+        showAllBricks()
+        ball.x = canvas.width / 2
+        ball.y = canvas.height / 2
+        ball.dx = 4
+        ball.dy = -4
+        ball.speed = 4
+        score = 0
+    }
+}
 function keyDown(e)
 {
     if (e.key == 'ArrowRight' || e.key == 'Right' )
@@ -165,10 +163,8 @@ function keyUp(e)
 
 function moveBall()
 {
-
     ball.x = ball.x + ball.dx
     ball.y = ball.y + ball.dy
-
 
     // wall detection (top)
     if (ball.y + ball.size < 0)
@@ -186,10 +182,13 @@ function moveBall()
     if (ball.y + ball.size > canvas.height)
     {
         ball.dy = -1 * ball.dy
+        
+        ball.speed = 0
+        ball.dx = 0
+        ball.dy = 0
 
 
     }
-
 
     // wall detection left
      // wall detection (right)
@@ -236,7 +235,6 @@ function increaseScore()
     }
 }
 
-
 function showAllBricks()
 {
     bricks.forEach(column =>
@@ -247,15 +245,12 @@ function showAllBricks()
                 })
         })
 }
-
-
 function update()
 {
     moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
-
 }
 
 update()
@@ -269,4 +264,3 @@ rulesBtn.addEventListener('click', () =>{
 closeBtn.addEventListener('click', () =>{
     rules.classList.remove('show')
 })
-
