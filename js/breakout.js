@@ -67,6 +67,7 @@ function drawBall()
         ctx.fillStyle = '#344D2B'
         ctx.fill()
         ctx.closePath()
+
     }
 
     //draw paddle on canvas
@@ -140,6 +141,9 @@ function reset(e)
         ball.dy = -4
         ball.speed = 4
         score = 0
+
+
+
     }
 }
 function keyDown(e)
@@ -182,7 +186,7 @@ function moveBall()
     if (ball.y + ball.size > canvas.height)
     {
         ball.dy = -1 * ball.dy
-        
+
         ball.speed = 0
         ball.dx = 0
         ball.dy = 0
@@ -264,3 +268,5 @@ rulesBtn.addEventListener('click', () =>{
 closeBtn.addEventListener('click', () =>{
     rules.classList.remove('show')
 })
+
+reset
