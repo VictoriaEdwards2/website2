@@ -25,7 +25,10 @@ h1
 
 .game-container
 {
-    padding: 20px 30px
+    padding: 20px 30px;
+    position: relative;
+    
+
 }
 .figure-container
 {
