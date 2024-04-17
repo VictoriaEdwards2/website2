@@ -52,7 +52,7 @@ h1
     right: 20px;
     display: flex;
     flex-direction: column;
-    text-alight: right;
+    text-align: right;
 }
 
 .wrong-letters-container p
@@ -84,6 +84,6 @@ h1
     justify-content: center;
     height: 50px;
     width: 20px;
-    margin: 0 0 3px;
+    margin: 0 3px;
     border-bottom: 3px solid #90EE60;
 }
