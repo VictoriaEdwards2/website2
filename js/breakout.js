@@ -1,5 +1,6 @@
 rulesBtn = document.getElementById('rules-btn')
 rules = document.getElementById('rules')
+start = document.getElementById('start')
 closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx= canvas.getContext('2d')
@@ -257,7 +258,7 @@ function update(pause)
     requestAnimationFrame(update)
 }
 update()
-
+function 
 
 
 draw()
