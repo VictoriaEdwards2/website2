@@ -1,0 +1,14 @@
+
+body
+{
+    background-color: #808080;
+    color: #344D2B;
+}
+
+.figure-container
+{
+    fill: transparent;
+    stroke: #344D2B;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}

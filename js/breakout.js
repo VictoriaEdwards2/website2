@@ -142,9 +142,8 @@ function reset(e)
         ball.speed = 4
         score = 0
 
-
-
     }
+
 }
 function keyDown(e)
 {
@@ -193,6 +192,7 @@ function moveBall()
 
 
     }
+
 
     // wall detection left
      // wall detection (right)
@@ -249,15 +249,15 @@ function showAllBricks()
                 })
         })
 }
-function update()
+function update(pause)
 {
     moveBall()
-    movePaddle()
     draw()
+    movePaddle()
     requestAnimationFrame(update)
 }
-
 update()
+
 
 draw()
 rulesBtn.addEventListener('click', () =>{
