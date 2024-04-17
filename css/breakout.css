@@ -17,7 +17,11 @@ body
 
 .start-btn
 {
-
+    top: 50%;
+}
+.start-btn:active
+{
+    opacity: 0;
 }
 canvas
 

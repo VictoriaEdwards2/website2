@@ -257,10 +257,7 @@ function update(pause)
     requestAnimationFrame(update)
 }
 update()
- function start()
- {
 
- }
 
 
 draw()
