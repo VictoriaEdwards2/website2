@@ -80,5 +80,9 @@ h1
 {
     font-size: 30px;
     display: inline-flex;
-    
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 20px;
+    margin: 0 0 3px;
 }
