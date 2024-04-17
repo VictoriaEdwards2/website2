@@ -257,8 +257,12 @@ function update(pause)
     movePaddle()
     requestAnimationFrame(update)
 }
-update()
-function 
+
+function Move()
+{
+    start()
+    update()
+}
 
 
 draw()
