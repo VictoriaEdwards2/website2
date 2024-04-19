@@ -95,7 +95,8 @@ function increaseScore()
     if (seconds >= 30 && score <60)
     {
         lost.classList.add('visable')
-        
+        message.classList.remove('visable')
+
     }
 
 }
