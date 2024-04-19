@@ -46,6 +46,17 @@ function increaseTime()
     }
     timeEl.innerHTML = `Time: ${m}:${s}`
     seconds++
+    if (score > 59 && seconds < 30 )
+    {
+        won.classList.add('visable')
+        message.classList.remove('visable')
+    }
+    if (seconds >= 30 && score <60)
+    {
+        lost.classList.add('visable')
+        message.classList.remove('visable')
+
+    }
 }
 
 function createInsect()
@@ -87,21 +98,8 @@ function increaseScore()
         message.classList.add('visable')
     }
     scoreEl.innerHTML = `Score: ${score}`
-    if (score > 59 && seconds < 30 )
-    {
-        won.classList.add('visable')
-        message.classList.remove('visable')
-    }
-    if (seconds >= 30 && score <60)
-    {
-        lost.classList.add('visable')
-        message.classList.remove('visable')
-
-    }
 
 }
-
-
 
 
 function getRandomLocation()
