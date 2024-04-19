@@ -90,7 +90,7 @@ h1
 
 .popup-container
 {
-    background color: rgba(0,0,0,.3);
+    background color: #344D2B;
     position: fixed;
     top:0;
     bottom:0;
@@ -100,6 +100,20 @@ h1
     align-items: center;
     justify-content: center;
 
+}
+.popup
+{
+    background:#344D2B;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0,0,0,.1);
+    padding: 20px;
+    text-align: center
 
+}
 
+.popup button
+{
+    cursor: pointer;
+    background color: #808080;
+    color: #344D2B
 }
