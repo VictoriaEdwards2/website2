@@ -96,14 +96,14 @@ h1
     bottom:0;
     left:0;
     right:0;
-    dislay:flex;
+    dislay:none;
     align-items: center;
     justify-content: center;
 
 }
 .popup
 {
-    background:#344D2B;
+    background:#blue;
     border-radius: 5px;
     box-shadow: 0 15px 10px 3px rgba(0,0,0,.1);
     padding: 20px;
@@ -114,6 +114,15 @@ h1
 .popup button
 {
     cursor: pointer;
-    background color: #808080;
-    color: #344D2B
+    background color: #909090;
+    color: #344D2B;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.popup button:active
+{
+    transform: scale(.98);
+
 }
