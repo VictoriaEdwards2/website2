@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"gitdoc.enabled": true,
+		"liveServer.settings.multiRootWorkspaceName": "codespaces+ideal-capybara-pjr9rr4v5r5q27x4p"
+	}
+}
