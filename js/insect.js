@@ -51,11 +51,14 @@ function increaseTime()
         won.classList.add('visable')
         message.classList.remove('visable')
     }
-    if (seconds >= 30 && score <60)
+    if (seconds > 30 && score < 60)
     {
         lost.classList.add('visable')
         message.classList.remove('visable')
-
+    }
+    if (seconds > 30 && score == 0)
+    {
+        lost.classList.add('visable')
     }
 }
 
