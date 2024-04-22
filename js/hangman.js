@@ -25,7 +25,9 @@ function displayWord()
 	${correctLetters.includes(letter) ? letter : ' '}
 </span>
 `)join(' ')
-}
+ }
 `
+ const innerWord = wordEl.innerText.replace(/\n/g, '')
+ console.log(wordEl.innerText, innerWord)
 }
 displayWord()
