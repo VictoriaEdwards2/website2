@@ -6,7 +6,7 @@ const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
 
-const word = ['wizard', 'computer', 'MegaKnight', 'Lebron']
+const word = ['wizard', 'computer', 'program', 'science']
 
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
@@ -36,7 +36,9 @@ function displayWord() {
 
 
 
-
 //Keydown letter press
-window.addEventListner('keydown')
+window.addEventListner('keydown', e =>{
+
+    if(e.keyCode >= 65 && e.keyCode <= 90)
+})
 displayWord()
