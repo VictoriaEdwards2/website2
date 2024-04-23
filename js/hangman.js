@@ -6,7 +6,7 @@ const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
 
-const word = ['wizard', 'computer', 'program', 'science']
+const word = ['program', 'computer', 'science', 'wizard']
 
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
@@ -35,80 +35,71 @@ function displayWord() {
     }
 }
 
-//Update The wrong Letters
-function updateWrongLettersEl()
-{
-    wrongLettersEl.innerHTML = `
-    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
-    ${wrongLetters.map(letter => `<span>${letter}</span>`)}
-    `
-
-    figureParts.forEach((part, index) =>
-    {
-        const errors = wrongLetters.length
-        if(index < errors)
-        {
-            part.style.display = 'block'
-        } else
-        {
-            part.style.display = 'none'
-        }
-    })
-
-    //check if lost
-    if(wrongLetters.length == figureParts.length)
-    {
-        finalMessage.innerText = 'Unfortunatly you lost'
-        popup.style.display = 'flex'
-    }
-}
-
-// show notification
-function showNotification()
-{
-    notification.classList.add('show')
-
-    setTimeout(() =>
-    {
-        notification.classList.remove('show')
-    }, 2000)
-}
 //Keydown letter press
-window.addEventListener('keydown', e =>{
+window.addEventListener('keydown', e => {
 
-    if(e.keyCode >= 65 && e.keyCode <= 90)
-    {
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key
 
-        if (selectedWord.includes(letter))
-        {
-            if(!correctLetters.includes(letter))
-            {
+        if (selectedWord.includes(letter)) {
+            if (!correctLetters.includes(letter)) {
                 correctLetters.push(letter)
 
                 displayWord()
-            } else
-            {
+            }else {
                 showNotification()
-            }
-        }else
-        {
-            if(!wrongLetters.includes(letter))
-            {
-                wrongLetters.push(letter)
+            }} else {
+                if (!wrongLetters.includes(letter)) {
+                    wrongLetters.push(letter)
 
-                updateWrongLettersEl()
-            }else
-            {
-                showNotification()
+                    updateWrongLettersEl()
+                }else {
+                    showNotification()
+                }
             }
         }
-    }
 })
 
-//restart game and play again
-playAgainBtn.addEventListener('click', () =>
-{
+//update wotn gletters
+function updateWrongLettersEl() {
+    wrongLettersEl.innerHTML = `
+        ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+        ${wrongLetters.map(letter => `<span>${letter}</span>`)}
+    `
+
+//dislpay parteys
+ figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length
+
+    //check if lost
+ if (index < errors) {
+    part.style.display = 'block'
+ } else{
+    part.style.display = 'none'
+ }
+ })
+
+
+
+
+ //cehck loss
+ if (wrongLetters.length == figureParts.length) {
+    finalMessage.innerText = 'Unfortunately you lost!'
+    popup.style.display = 'flex'
+ }
+}
+
+//show noti
+function showNotification() {
+    notification.classList.add('show')
+
+    setTimeout(() => {
+        notification.classList.remove('show')
+    }, 2000)
+}
+
+//restart gamed
+playAgainBtn.addEventListener('click', () => {
     correctLetters.length = 0
     wrongLetters.length = 0
 
@@ -120,7 +111,8 @@ playAgainBtn.addEventListener('click', () =>
     updateWrongLettersEl()
 
     popup.style.display = 'none'
-
-
 })
+
 displayWord()
+
+
