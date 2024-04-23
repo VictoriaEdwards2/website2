@@ -36,10 +36,10 @@ function displayWord() {
 }
 
 //Update The wrong Letters
-function updateWrongLetterEl()
+function updateWrongLettersEl()
 {
     wrongLettersEl.innerHTML = `
-    ${wrongLetters.length > 0 ? '<p>Wrong<p>' : ''}
+    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
     ${wrongLetters.map(letter => `<span>${letter}</span>`)}
     `
 
