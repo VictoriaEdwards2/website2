@@ -6,7 +6,7 @@ const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
 
-const word = ['program', 'computer', 'science', 'wizard']
+const word = ['hogrider', 'larry', 'megaknight', 'lebron']
 
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
@@ -30,7 +30,7 @@ function displayWord() {
     const innerWord = wordEl.innerText.replace(/\n/g, '')
 
     if (innerWord == selectedWord) {
-        finalMessage.innerText = 'Congratulations! You Won!'
+        finalmessage.innerText = 'Congratulations! You Won!'
         popup.style.display = 'flex'
     }
 }
@@ -114,5 +114,6 @@ playAgainBtn.addEventListener('click', () => {
 })
 
 displayWord()
+
 
 
