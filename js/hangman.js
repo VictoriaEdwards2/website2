@@ -53,6 +53,13 @@ function updateWrongLetterEl()
             part.style.display = 'none'
         }
     })
+
+    //check if lost
+    if(wrongLetters.length == figureParts.length)
+    {
+        finalMessage.innerText = 'Unfortunatly you lost'
+        popup.style.display = 'flex'
+    }
 }
 
 // show notification
@@ -97,4 +104,7 @@ window.addEventListener('keydown', e =>{
         }
     }
 })
+
+//restart game and play again
+
 displayWord()
