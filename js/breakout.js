@@ -1,4 +1,5 @@
 rulesBtn = document.getElementById('rules-btn')
+startBtn = document.getElementById('start-btn')
 rules = document.getElementById('rules')
 start = document.getElementById('start')
 closeBtn = document.getElementById('close-btn')
@@ -65,7 +66,7 @@ function drawBall()
     {
         ctx.beginPath()
         ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2)
-        ctx.fillStyle = '#344D2B'
+        ctx.fillStyle = '#34495e'
         ctx.fill()
         ctx.closePath()
 
@@ -76,7 +77,7 @@ function drawPaddle()
 {
     ctx.beginPath()
     ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h)
-    ctx.fillStyle = '#344D2B'
+    ctx.fillStyle = '#34495e'
     ctx.fill()
     ctx.closePath()
 }
@@ -96,7 +97,7 @@ function drawBricks()
         {
             ctx.beginPath()
             ctx.rect(brick.x, brick.y, brick.w, brick.h)
-            ctx.fillStyle = brick.visible ? '#344D2B' : 'transparent'
+            ctx.fillStyle = brick.visible ? '#34495e' : 'transparent'
             ctx.fill()
             ctx.closePath()
         })
@@ -130,22 +131,7 @@ function movePaddle()
 }
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
-document.addEventListener('keydown', reset)
-function reset(e)
-{
-    if (e.key == " ")
-    {
-        showAllBricks()
-        ball.x = canvas.width / 2
-        ball.y = canvas.height / 2
-        ball.dx = 4
-        ball.dy = -4
-        ball.speed = 4
-        score = 0
 
-    }
-
-}
 function keyDown(e)
 {
     if (e.key == 'ArrowRight' || e.key == 'Right' )
@@ -187,9 +173,7 @@ function moveBall()
     {
         ball.dy = -1 * ball.dy
 
-        ball.speed = 0
-        ball.dx = 0
-        ball.dy = 0
+        update(pause)
 
 
     }
@@ -250,7 +234,7 @@ function showAllBricks()
                 })
         })
 }
-function update(pause)
+function update()
 {
     moveBall()
     draw()
@@ -258,14 +242,23 @@ function update(pause)
     requestAnimationFrame(update)
 }
 
-function Move()
-{
-    start()
-    update()
-}
 
 
 draw()
+startBtn.addEventListener('click', () =>
+{
+
+    update()
+    showAllBricks()
+    score = 0
+    ball.x = canvas.width / 2
+    ball.y = canvas.height / 2
+    paddle.x = canvas.width / 2 - 40
+    paddle.y = canvas.height -20
+
+
+
+})
 rulesBtn.addEventListener('click', () =>{
     rules.classList.add('show')
 
@@ -275,4 +268,3 @@ closeBtn.addEventListener('click', () =>{
     rules.classList.remove('show')
 })
 
-reset

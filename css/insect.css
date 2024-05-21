@@ -7,8 +7,8 @@
 
 body
 {
-    background-color:  #344D2B;
-    color: #808080;
+    background-color:  #34495e;
+    color: #d3d3d3;
     font-family: "Press Start 2P", system-ui;
     height: 100vh;
     overflow: hidden;
@@ -35,8 +35,8 @@ body
 .btn
 {
     border: 0;
-    background-color: #808080;
-    color: #344D2B;
+    background-color: #d3d3d3;
+    color: #34495e;
     padding: 15px 20px;
     cursor: pointer;
     font-family: "Press Start 2P", system-ui;
@@ -56,7 +56,7 @@ body
 }
 
 a{
-    color: #808080;
+    color: #d3d3d3;
 }
 h1
 {
@@ -81,8 +81,8 @@ h1
 .choose-insect-btn
 {
     background-color: transparent;
-    border: 2px solid #808080
-    color: #808080;
+    border: 2px solid #d3d3d3;
+    color: #d3d3d3;
     cursor: pointer;
     font-family: inherit;
     width: 150px;
@@ -91,8 +91,8 @@ h1
 
 .choose-insect-btn:hover
 {
-    background-color: #808080;
-    color: #344D2B;
+    background-color: #d3d3d3;
+    color: #34495e;
 }
 
 .choose-insect-btn:active
@@ -212,3 +212,51 @@ insect.caught
     transform: translate(-50%, -50%) scale(0);
 
 }
+.Home {
+    padding: 15px;
+    background-color: #d3d3d3;
+    color: #34495e;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-color: #d3d3d3;
+  }
+
+  .next {
+    padding: 15px;
+    background-color: #d3d3d3;
+    color: #34495e;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-color: #d3d3d3;
+  }
+  .Home:hover {
+    padding: 15px;
+    background-color: #d3d3d3;
+    color: #34495e;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-color: #d3d3d3;
+    opacity: .7;
+  }
+
+  .next:hover {
+    padding: 15px;
+    background-color: #d3d3d3;
+    color: #34495e;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-color: #d3d3d3;
+    opacity: .7;
+  }
