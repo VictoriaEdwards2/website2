@@ -12,6 +12,10 @@ let selected_insect = {}
 start_btn.addEventListener('click', () =>
 {
     screen[0].classList.add('up')
+    home.classList.add('visable')
+    next.classList.add('visable')
+
+
 })
 
 choose_insect_btns.forEach(btn =>
@@ -114,3 +118,4 @@ function getRandomLocation()
     return {x,y}
 
 }
+

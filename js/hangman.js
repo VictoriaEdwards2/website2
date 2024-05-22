@@ -5,11 +5,14 @@ const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
+let stop = true
 
 const word = ['computer', 'program', 'code', 'science']
 
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
+
+
 
 const correctLetters = []
 const wrongLetters = []
@@ -32,21 +35,24 @@ function displayWord() {
     if (innerWord == selectedWord) {
         finalMessage.innerText = 'Congratulations! You Won!'
         popup.style.display = 'flex'
+        stop = false
 
         window.addEventListener('keydown', e => {
 
             if (e.keyCode >= 65 && e.keyCode <= 90) {
                 pause()
-            }
-        })
 
+            }
+
+        })
+        stop = false
     }
 }
 
 //Keydown letter press
 window.addEventListener('keydown', e => {
 
-    if (e.keyCode >= 65 && e.keyCode <= 90) {
+    if (e.keyCode >= 65 && e.keyCode <= 90 && stop) {
         const letter = e.key
 
         if (selectedWord.includes(letter)) {
@@ -64,18 +70,20 @@ window.addEventListener('keydown', e => {
                 }else {
                     showNotification()
                 }
+
             }
         }
+
 })
 
-//update wotn gletters
+//update wrong letters
 function updateWrongLettersEl() {
     wrongLettersEl.innerHTML = `
         ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
         ${wrongLetters.map(letter => `<span>${letter}</span>`)}
     `
 
-//dislpay parteys
+//display letters
  figureParts.forEach((part, index) => {
     const errors = wrongLetters.length
 
@@ -90,14 +98,16 @@ function updateWrongLettersEl() {
 
 
 
- //cehck loss
+ //check loss
  if (wrongLetters.length == figureParts.length) {
-    finalMessage.innerText = 'Unfortunately you lost!'
+    finalMessage.innerText = `Unfortunately you lost! The correct word was ${selectedWord}.`
     popup.style.display = 'flex'
+    stop = false
+
  }
 }
 
-//show noti
+//show notificaiton
 function showNotification() {
     notification.classList.add('show')
 
@@ -106,8 +116,9 @@ function showNotification() {
     }, 2000)
 }
 
-//restart gamed
+//restart game
 playAgainBtn.addEventListener('click', () => {
+    stop = true
     correctLetters.length = 0
     wrongLetters.length = 0
 

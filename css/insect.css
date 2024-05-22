@@ -212,7 +212,7 @@ insect.caught
     transform: translate(-50%, -50%) scale(0);
 
 }
-.Home {
+.Home.visable {
     padding: 15px;
     background-color: #d3d3d3;
     color: #34495e;
@@ -222,6 +222,32 @@ insect.caught
     margin-top: 10px;
     margin-left: 10px;
     border-color: #d3d3d3;
+    opacity: 0;
+  }
+
+  .next.visable {
+    padding: 15px;
+    background-color: #d3d3d3;
+    color: #34495e;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-color: #d3d3d3;
+    opacity: 0;
+  }
+  .Home {
+    padding: 15px;
+    background-color: #d3d3d3;
+    color: #34495e;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-color: #d3d3d3;
+    opacity: 1;
   }
 
   .next {
@@ -234,29 +260,6 @@ insect.caught
     margin-top: 10px;
     margin-right: 10px;
     border-color: #d3d3d3;
+    opacity: 1;
   }
-  .Home:hover {
-    padding: 15px;
-    background-color: #d3d3d3;
-    color: #34495e;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    margin-top: 10px;
-    margin-left: 10px;
-    border-color: #d3d3d3;
-    opacity: .7;
-  }
-
-  .next:hover {
-    padding: 15px;
-    background-color: #d3d3d3;
-    color: #34495e;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    margin-top: 10px;
-    margin-right: 10px;
-    border-color: #d3d3d3;
-    opacity: .7;
-  }
+ 

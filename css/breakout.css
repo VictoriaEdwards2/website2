@@ -20,8 +20,8 @@ body
     transition: transform 1s ease-in-out;
     border-radius: 0;
     position: absolute;
-    top:500px;
-    right:1200px;
+    top:870px;
+    right:690px;
 }
 
 .start-btn:active
